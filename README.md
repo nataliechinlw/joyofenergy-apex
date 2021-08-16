@@ -70,15 +70,15 @@ Parameters
 
 Example readings
 
-| Client         |  Reading Time       |  Value (`kW`)  |
-| -------------- |  --------------:    | -------------: |
-| Charlie        |  `2020-11-29 8:00`  |  4.0503        |
-| Charlie        |  `2020-11-29 8:01`  |  3.0621        |
-| Charlie        |  `2020-11-29 8:02`  |  4.0222        |
-| Charlie        |  `2020-11-29 8:03`  |  2.0423        |
+| Client         |  Reading Time        |  Value (`kW`)  |
+| -------------- |  --------------:     | -------------: |
+| Charlie        |  `2020-11-29 8:00`   |  4.0503        |
+| Charlie        |  `2020-11-29 9:00`   |  3.0621        |
+| Charlie        |  `2020-11-29 10:00`  |  4.0222        |
+| Charlie        |  `2020-11-29 11:00`  |  2.0423        |
 
 
-In the above example, the smart meter sampled readings, in `kW`, every minute. Note that the reading is in `kW` and
+In the above example, the smart meter sampled readings, in `kW`, every hour. Note that the reading is in `kW` and
 not `kWH`, which means that each reading represents the consumption at the reading time. If no power is being consumed
 at the time of reading, then the reading value will be `0`. Given that `0` may introduce new challenges, we can assume
 that there is always some consumption, and we will never have a `0` reading value. These readings are then sent by the
