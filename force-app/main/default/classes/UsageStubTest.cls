@@ -22,7 +22,7 @@ public with sharing class UsageStubTest {
             Reading__c reading = new Reading__c();
             reading.Client__c = client.Id;
             reading.ReadingTime__c = now.addHours(-1 * i);
-            reading.Value__c = i;
+            reading.Value__c = i + 1;
             readings.add(reading);
         }
         insert readings;
