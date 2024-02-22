@@ -49,7 +49,7 @@ public with sharing class UsageStubTest {
     public static void testUsage(){
         Contact client = [SELECT Id FROM Contact LIMIT 1];
         Decimal usage = UsageStub.usage(client.Id);
-        System.assertEquals(0.75, usage);
+        System.assertEquals(12, usage);
     }
 
     // should get usage cost for all readings for all price plans
@@ -58,8 +58,8 @@ public with sharing class UsageStubTest {
         Contact client = [SELECT Id FROM Contact LIMIT 1];
         List<PlanCost> plans = UsageStub.getUsageForAllPricePlans(client.Id);
         plans.sort();
-        System.assertEquals(0.75, plans[0].cost);
-        System.assertEquals(1.5, plans[1].cost);
-        System.assertEquals(7.5, plans[2].cost);
+        System.assertEquals(12, plans[0].cost);
+        System.assertEquals(24, plans[1].cost);
+        System.assertEquals(120, plans[2].cost);
     }
 }

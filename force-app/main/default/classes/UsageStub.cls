@@ -19,7 +19,7 @@ public without sharing class UsageStub {
 
     @testVisible
     private static Decimal usage(Id clientId) {
-        return average(clientId) / timeElapsedInHours(clientId);
+        return average(clientId) * timeElapsedInHours(clientId);
     }
 
     @testVisible
